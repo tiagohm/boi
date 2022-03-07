@@ -1,0 +1,30 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "$kotlinVersion" apply false
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    versionCatalogs {
+        libs {
+            version("kotlin", "$kotlinVersion")
+            version("kotest", "5.1.0")
+            version("poi", "5.2.1")
+
+            library("kotlin-stdlib", "org.jetbrains.kotlin", "kotlin-stdlib").versionRef("kotlin")
+            library("kotlin-stdlib-jdk8", "org.jetbrains.kotlin", "kotlin-stdlib-jdk8").versionRef("kotlin")
+            library("poi", "org.apache.poi", "poi-ooxml").versionRef("poi")
+            library("kotest-runner-junit5", "io.kotest", "kotest-runner-junit5").versionRef("kotest")
+            library("kotest-assertions-core", "io.kotest", "kotest-assertions-core").versionRef("kotest")
+
+            bundle("test", ["kotest-runner-junit5", "kotest-assertions-core"])
+            bundle("kotlin", ["kotlin-stdlib", "kotlin-stdlib-jdk8"])
+        }
+    }
+}
+
+include ":core"
+include ":excel"
