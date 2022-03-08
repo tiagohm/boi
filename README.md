@@ -1,3 +1,3 @@
-# Boi
+# Boi 🐮
 
-Kotlin DSL Builder for Apache POI
+Kotlin DSL **B**uilder for Apache P**OI**

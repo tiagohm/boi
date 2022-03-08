@@ -16,12 +16,14 @@ dependencyResolutionManagement {
 
             library("kotlin-stdlib", "org.jetbrains.kotlin", "kotlin-stdlib").versionRef("kotlin")
             library("kotlin-stdlib-jdk8", "org.jetbrains.kotlin", "kotlin-stdlib-jdk8").versionRef("kotlin")
-            library("poi", "org.apache.poi", "poi-ooxml").versionRef("poi")
+            library("poi-ooxml", "org.apache.poi", "poi-ooxml").versionRef("poi")
+            library("poi-full", "org.apache.poi", "poi-ooxml-full").versionRef("poi")
             library("kotest-runner-junit5", "io.kotest", "kotest-runner-junit5").versionRef("kotest")
             library("kotest-assertions-core", "io.kotest", "kotest-assertions-core").versionRef("kotest")
 
-            bundle("test", ["kotest-runner-junit5", "kotest-assertions-core"])
             bundle("kotlin", ["kotlin-stdlib", "kotlin-stdlib-jdk8"])
+            bundle("poi", ["poi-ooxml", "poi-full"])
+            bundle("test", ["kotest-runner-junit5", "kotest-assertions-core"])
         }
     }
 }

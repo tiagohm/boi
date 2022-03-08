@@ -6,7 +6,7 @@ plugins {
 dependencies {
     implementation libs.bundles.kotlin
 
-    api libs.poi
+    api libs.bundles.poi
 
     testImplementation libs.bundles.test
 }

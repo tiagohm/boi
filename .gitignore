@@ -340,4 +340,7 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+*.xlsx
+*.~lock.*
+
 # End of https://www.toptal.com/developers/gitignore/api/node,java,kotlin,gradle,angular,intellij,visualstudiocode
