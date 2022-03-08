@@ -18,6 +18,19 @@ test {
     useJUnitPlatform()
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.kotlin
+        }
+    }
+}
+
 compileKotlin {
     kotlinOptions.jvmTarget = "11"
 }
